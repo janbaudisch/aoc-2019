@@ -7,13 +7,19 @@ fn main() {
         .map(|x| calculate_fuel(&x) as u32)
         .collect();
 
-    println!("[PART ONE] sum of the fuel requirements: {}", fuel.iter().sum::<u32>());
+    println!(
+        "[PART ONE] sum of the fuel requirements: {}",
+        fuel.iter().sum::<u32>()
+    );
 
     for f in fuel.iter_mut() {
         *f += calculate_fuel_recursive(f);
     }
 
-    println!("[PART TWO] sum of the fuel requirements: {}", fuel.iter().sum::<u32>());
+    println!(
+        "[PART TWO] sum of the fuel requirements: {}",
+        fuel.iter().sum::<u32>()
+    );
 }
 
 fn calculate_fuel(mass: &u32) -> i32 {
