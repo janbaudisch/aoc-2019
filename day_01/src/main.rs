@@ -4,7 +4,7 @@ fn main() {
     let mut fuel: Vec<u32> = input::read_lines()
         .iter()
         .map(|x| u32::from_str_radix(&x, 10).expect("error converting input"))
-        .map(|x| calculate_fuel(&x) as u32)
+        .map(|x| calculate_fuel(x) as u32)
         .collect();
 
     println!(
@@ -13,7 +13,7 @@ fn main() {
     );
 
     for f in fuel.iter_mut() {
-        *f += calculate_fuel_recursive(f);
+        *f += calculate_fuel_recursive(*f);
     }
 
     println!(
@@ -22,16 +22,16 @@ fn main() {
     );
 }
 
-fn calculate_fuel(mass: &u32) -> i32 {
-    (*mass as f32 / 3 as f32).floor() as i32 - 2
+fn calculate_fuel(mass: u32) -> i32 {
+    (mass as f32 / 3_f32).floor() as i32 - 2
 }
 
-fn calculate_fuel_recursive(mass: &u32) -> u32 {
+fn calculate_fuel_recursive(mass: u32) -> u32 {
     let fuel = calculate_fuel(mass);
 
     if fuel.is_negative() {
         return 0;
     }
 
-    fuel as u32 + calculate_fuel_recursive(&(fuel as u32))
+    fuel as u32 + calculate_fuel_recursive(fuel as u32)
 }
