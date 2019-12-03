@@ -1,5 +1,10 @@
 use std::io;
 
+#[cfg(not(target_os = "windows"))]
+static NEWLINE: &str = "\n";
+#[cfg(target_os = "windows")]
+static NEWLINE: &str = "\r\n";
+
 pub fn read_line() -> String {
     let mut input = String::new();
 
@@ -21,7 +26,7 @@ pub fn read_lines() -> Vec<String> {
 
         match io::stdin().read_line(&mut input) {
             Ok(_) => {
-                if input == "\n" {
+                if input == NEWLINE {
                     break;
                 }
 
