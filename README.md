@@ -1,9 +1,9 @@
-[![Build][build-img]][build-url]
+[![Run][run-img]][run-url]
 
 # Advent of Code 2019
 
 > My Rust implementation of [Advent of Code 2019][aoc-url].
 
-[build-img]: https://travis-ci.com/janbaudisch/aoc-2018.svg?branch=master
-[build-url]: https://img.shields.io/github/workflow/status/janbaudisch/aoc-2019/Test?label=Build
+[run-img]: https://img.shields.io/github/workflow/status/janbaudisch/aoc-2019/Run?label=Run
+[run-url]: https://github.com/janbaudisch/aoc-2019/actions?query=workflow%3ARun
 [aoc-url]: https://adventofcode.com/2019
