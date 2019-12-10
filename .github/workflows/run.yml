@@ -1,0 +1,23 @@
+name: Run
+
+on: [push, pull_request]
+
+jobs:
+  run:
+    name: Run on Rust ${{ matrix.rust }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust: [stable, beta, nightly]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Setup Rust
+      run: |
+        rustup toolchain add ${{ matrix.rust }}
+        rustup default ${{ matrix.rust }}
+
+    - name: Run
+      run: ./run.bash
