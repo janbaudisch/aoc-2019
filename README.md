@@ -4,6 +4,6 @@
 
 > My Rust implementation of [Advent of Code 2019][aoc-url].
 
-[build-img]: https://img.shields.io/github/workflow/status/janbaudisch/aoc-2019/Test?label=Build
-[build-url]: https://github.com/janbaudisch/aoc-2019/actions?query=workflow%3ATest
+[build-img]: https://builds.sr.ht/~janbaudisch/aoc-2019.svg
+[build-url]: https://builds.sr.ht/~janbaudisch/aoc-2019
 [aoc-url]: https://adventofcode.com/2019
